@@ -125,7 +125,7 @@ elseif ($act == 'submit') {
 <tr><td class=thead colspan=2><strong>{$lang->mylists_new_global_todo}</strong></td></tr>
 <form action='' method='post'>
 <tr class='trow1'><td style='width:100px;'>{$lang->mylists_title}</td><td><input type='text' name='title' style='width:200px;'/></td></tr>
-<tr class='trow1'><td style='width:100px;'>{$lang->mylists_priority}</td><td><select name='priority'><option name='normal'>{$lang->mylists_priority_normal}</option><option name='high' style='color:red;'>{$lang->mylists_priority_high}</option><option name='medium' style='color:blue;'>{$lang->mylists_priority_medium}</option><option name='low' style='color:green;'>{$lang->mylists_priority_low}</option></select></td></tr>
+<tr class='trow1'><td style='width:100px;'>{$lang->mylists_priority}</td><td><select name='priority'><option name='{$lang->mylists_priority_normal}'>{$lang->mylists_priority_normal}</option><option name='{$lang->mylists_priority_high}' style='color:red;'>{$lang->mylists_priority_high}</option><option name='{$lang->mylists_priority_medium}' style='color:blue;'>{$lang->mylists_priority_medium}</option><option name='{$lang->mylists_priority_low}' style='color:green;'>{$lang->mylists_priority_low}</option></select></td></tr>
 <tr class='trow1'><td colspan='2'><input type='submit' value='{$lang->mylists_add_todo_btn}'/></td></tr>
 </table>
 {$footer}
@@ -141,13 +141,13 @@ output_page($page);
 		$insert['title'] = $db->escape_string($mybb->input['title']);
 		$insert['priority'] = $db->escape_string($mybb->input['priority']);
 		$db->insert_query("my_lists",$insert);
-		redirect("mylists.php", "The todo has been added!");
+		redirect("mylists.php", "{$lang->mylists_add_success}");
 	}
 }
 elseif ($act == 'delete') {
 	$id = $_GET['id'];
 	$db->query("DELETE FROM ".TABLE_PREFIX."my_lists WHERE id='" . $id . "'");
-	redirect("mylists.php", "The todo has been successfully removed!");
+	redirect("mylists.php", "{$lang->mylists_remove_success}");
 }
 
 ?>
