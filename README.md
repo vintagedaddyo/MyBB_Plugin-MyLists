@@ -31,10 +31,17 @@
  In future releases we look to implement:
 
  * Banning individual users or user groups from mylists.
+ 
  / Only staff can remove todos. - ADDED
+ 
  * Checkboxes to select todos, then mod options.
+ 
  * Edit todo's.
+ 
  / Set Todo Priority. - ADDED
+ 
  * Individual user todo list.
+ 
  / Medium level priority. - ADDED
+ 
 / Localization support. - ADDED
